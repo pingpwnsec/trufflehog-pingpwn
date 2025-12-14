@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Privacy Policy — trugglehog-pingpwn</title>
+    <style>
+      body{font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:880px;margin:28px auto;color:#222;line-height:1.6;padding:0 18px}
+      h1{font-size:1.6rem;margin-top:0}
+      h2{font-size:1.05rem;margin-top:1.2rem}
+      p,ul{margin:0.6rem 0}
+      pre{background:#f6f6f6;padding:8px;border-radius:6px;overflow:auto}
+      .muted{color:#555;font-size:0.95rem}
+      footer{margin-top:2rem;font-size:0.9rem;color:#444}
+    </style>
+  </head>
+  <body>
+    <h1>Privacy Policy</h1>
+    <p class="muted">trugglehog-pingpwn — Last updated: 2025-12-14</p>
+
+    <h2>Overview</h2>
+    <p>
+      trugglehog-pingpwn is a browser extension that scans web pages and referenced resources for patterns that may indicate exposed secrets (for example: API keys, tokens, private keys, and webhook URLs). Scanning and analysis are performed locally within the user's browser.
+    </p>
+
+    <h2>What data the extension accesses</h2>
+    <ul>
+      <li>Page content and referenced resource contents (scripts, `.env` files, `.git` files) are read by the extension in order to perform pattern-based checks.</li>
+      <li>Detected findings (matched strings) and user preferences are stored locally using the browser's <code>chrome.storage.sync</code> API.</li>
+    </ul>
+
+    <h2>Network activity</h2>
+    <p>
+      The extension may fetch resources (for example, external scripts, `.env` files or potential `.git` files) to analyze them. These fetches are initiated by the browser and are subject to the same-origin and CORS policies. All fetches are performed solely to enable local analysis.
+    </p>
+    <p>
+      <strong>No findings or page content are transmitted to external servers.</strong> The extension does not POST, upload, or otherwise send findings or page content to any remote endpoint.
+    </p>
+
+    <h2>Permissions and why they are required</h2>
+    <ul>
+      <li><code>activeTab</code> / <code>tabs</code>: to identify the active tab and message content scripts for origin-scoped updates.</li>
+      <li><code>scripting</code>: to inject the content script used to inspect page content and referenced resources.</li>
+      <li><code>storage</code>: to retain user settings and detected findings locally.</li>
+      <li><code>notifications</code>: to display local notifications for selected detections (for example, a `.git` directory detection).</li>
+      <li><code>host_permissions</code>: <code>http://*/*</code> and <code>https://*/*</code> — required to fetch and analyze referenced resources across pages you visit. These permissions are used only to enable the extension's scanning functionality and are not used for data exfiltration.</li>
+    </ul>
+
+    <h2>Storage and retention</h2>
+    <p>
+      Findings and settings stored in <code>chrome.storage.sync</code> remain until the user clears them via the popup UI, disables the extension, or removes the extension from their browser. If Chrome Sync is enabled in the user's profile, stored items may be synced across signed-in browser instances according to the user's Chrome Sync configuration.
+    </p>
+
+    <h2>User controls</h2>
+    <ul>
+      <li>All detection categories can be toggled on or off from the extension popup.</li>
+      <li>Users may clear findings for the current origin or clear all stored findings via the popup UI.</li>
+      <li>There is a download/export feature that creates a CSV in the browser for the user to save — the extension does not keep copies of exported files.</li>
+    </ul>
+
+    <h2>Security and responsible use</h2>
+    <p>
+      While the extension does not transmit findings externally, detected strings may contain sensitive information. Review and handle findings carefully. Do not share exported findings unless you have confirmed they are safe to share.
+    </p>
+
+    <h2>Third-party sharing</h2>
+    <p>
+      The extension does not share detected findings, page contents, or user data with third parties. There are no external endpoints that receive findings from the extension.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      This page may be updated from time to time. The "Last updated" date at the top will reflect material changes. For transparency, consider linking to repository release notes when updating this page.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      For questions about privacy or data handling, contact the extension maintainer at <a href="mailto:pingpwnsec@gmail.com">pingpwnsec@gmail.com</a>.
+    </p>
+
+    <footer>
+      <p>Hosted copy of <strong>PRIVACY.md</strong> from the extension repository. For source and issue reporting, refer to the project repository.</p>
+    </footer>
+  </body>
+</html>
