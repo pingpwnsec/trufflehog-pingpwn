@@ -1,4 +1,4 @@
-# trugglehog-pingpwn
+# trufflehog-pingpwn
 
 Browser extension to help locate potential exposed secrets (API keys, tokens, private keys) on web pages and referenced resources. This fork is prepared for public release and performs detection locally in the browser. No findings are sent to any remote server.
 

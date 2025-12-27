@@ -1,7 +1,7 @@
 {
 "update_url": "https://clients2.google.com/service/update2/crx",
 
-  "name": "Trugglehog-PingPwn",
+  "name": "Trufflehog-PingPwn",
   "version": "0.0.3",
   "manifest_version": 3,
   "description": "Detects potential exposed secrets on web pages.",
@@ -10,7 +10,7 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "Trugglehog-PingPwn",
+    "default_title": "Trufflehog-PingPwn",
     "default_popup": "popup.html"
   },
   "permissions": [
