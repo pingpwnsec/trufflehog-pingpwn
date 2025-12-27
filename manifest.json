@@ -2,7 +2,7 @@
 "update_url": "https://clients2.google.com/service/update2/crx",
 
   "name": "Trufflehog-PingPwn",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "manifest_version": 3,
   "description": "Detects potential exposed secrets on web pages.",
   "homepage_url": "https://trufflesecurity.com",
